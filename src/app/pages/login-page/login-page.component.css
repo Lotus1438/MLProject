@@ -1,5 +1,12 @@
 .main-div{
-    padding: 0%;
+    padding: 60px 3rem;
+}
+
+.toolbar{
+  background-color: red;
+  color: white;
+  padding: 0%;
+
 }
 
 .login-form{
@@ -10,4 +17,5 @@
     background-color: red;
     color: white;
 }
+
 

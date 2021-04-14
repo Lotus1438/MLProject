@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <span>Log out</span>
+    </button>
+  </mat-menu>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    class="dropdown"
+    justify="flex-end"
+  >
+    <mat-icon justify="flex-end">more_vert</mat-icon>
+  </button>
+
+  <span>ml-project</span>
+</mat-toolbar>

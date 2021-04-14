@@ -1,0 +1,11 @@
+.mat-toolbar {
+  background-color: red;
+  color: white;
+  position: sticky;
+  margin-top: 0%;
+
+}
+
+.dropdown{
+  float: right;
+}

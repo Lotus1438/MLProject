@@ -1,0 +1,12 @@
+.main-div{
+  padding: 60px 3rem;
+}
+
+.full-width-table {
+  width: 100%;
+}
+
+th{
+  background-color: red;
+  color: white;
+}

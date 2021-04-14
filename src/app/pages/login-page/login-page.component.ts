@@ -10,17 +10,27 @@ import { Router } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
 
-  constructor(private router: Router){} 
+  constructor(private router: Router){}
 
-  form = new FormGroup ({
-    email_address: new FormControl ('', [Validators.required, Validators.email]),
+
+
+  ngOnInit(): void {
+
+  }
+
+  loginForm = new FormGroup ({
+    email: new FormControl ('', [Validators.required, Validators.email]),
     password: new FormControl ('', Validators.required),
   })
 
-  submit(){
-    this.router.navigate(['/request-feedback-page']);
-  }
+// onLogin(){
+//   console.log("Login Successfully!");
+// }
+
+login(){
+  this.router.navigate(['/email-request-feedback-page'])
+}
 
 }
