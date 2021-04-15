@@ -11,6 +11,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 
@@ -28,6 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-found-page.component';
+import { EmailRequestedPageComponent } from './pages/email-requested-page/email-requested-page.component';
 
 
 
@@ -38,6 +43,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     EmailRequestFeedbackPageComponent,
     NavbarComponent,
     AdminPageComponent,
+    PageNotFoundPageComponent,
+    EmailRequestedPageComponent,
 
 
 
@@ -63,6 +70,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatSelectModule,
     MatMenuModule,
     MatGridListModule,
+    MatCheckboxModule,
+    MatDividerModule,
+
 
 
   ],

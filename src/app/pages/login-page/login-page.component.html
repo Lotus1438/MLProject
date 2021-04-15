@@ -1,26 +1,33 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="25">
-        <mat-toolbar class="toolbar">Log In</mat-toolbar>
-        <!-- <mat-card-header class="mat-card-header"><img src="https://play-lh.googleusercontent.com/6XVULhdIqrVo4pFtQUZWIXhVnNnY7eK-dEMmL1G83gEG--HmdIN62KTHvh6Y7dXS3hI" alt="mlhuillier-logo" height="50px" width="300px"></mat-card-header> -->
-        <form fxLayoutAlign="stretch" fxLayout="column" class="log-in-form">
-            <!-- <mat-form-field>
-                <input matInput placeholder="Username">
-            </mat-form-field> -->
+        <mat-toolbar class="toolbar">
+          <img src="https://static.wixstatic.com/media/1e3920_14bec40ae7c84f43983e962a7a9660e3.png/v1/fill/w_159,h_139,al_c,q_85,usm_0.66_1.00_0.01/1e3920_14bec40ae7c84f43983e962a7a9660e3.webp" alt="mlhuillier-log" height="50px">
+          Log In
+        </mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="log-in-form" (ngSubmit)="loginForm.valid && login()" [formGroup]="loginForm">
+
+          <!-- email field -->
             <mat-form-field appearance="outline">
               <mat-label>Email Address</mat-label>
-              <input matInput placeholder="Email">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <input matInput type="email" placeholder="Email" matInput type="email" ngClass="{'invalid-input': email.invalid && (email.dirty || email.touched)}" required>
+              <!-- <div class="mt-5" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid" class="invalid-feedback">
+                <div *ngIf="loginForm.get('email').errors.required">Email Name is required</div>
+                <div *ngIf="loginForm.get('email').errors.email">Email must be a valid email Address
+                </div>
+                </div> -->
+              <mat-error *ngIf="loginForm.errors?.required">
+                Required Email Address
+              </mat-error>
             </mat-form-field>
-
-            <!-- <mat-form-field>
-                <input matInput placeholder="Password">
-            </mat-form-field> -->
+            <!-- password field -->
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              <input matInput placeholder="Password" matInput [type]="hidden ? 'password' : 'text'" ngClass="{'invalid-input': password.invalid && (password.dirty || password.touched)}" required>
+              <button mat-icon-button matSuffix (click)="hide()">
+                <mat-icon>{{hidden?'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
             </mat-form-field>
-            <button mat-raised-button id="btnlogin" type="submit"  (click)="login()">Log in</button>
+            <button mat-raised-button color="warn" type="submit" (click)="login()">Log in</button>
 
         </form>
     </mat-card>

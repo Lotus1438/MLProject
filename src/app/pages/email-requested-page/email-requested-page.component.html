@@ -1,0 +1,19 @@
+
+<div class="main-content" (click)="show()">
+
+    <h3>Sends Request To: </h3>
+    <hr>
+    <mat-icon>star_rate</mat-icon><mat-list-item>name.email@mlhuillier.com</mat-list-item>
+    <mat-divider></mat-divider>
+
+</div>
+
+<div class="div-content" [hidden]="hidden">
+  <p>emial@mlhuillier</p>
+  <p>sends feedback</p>
+  <p>sends feedback</p>
+  <button mat-raised-button color="warn" (click)="send()">Send Message</button>
+</div>
+
+
+

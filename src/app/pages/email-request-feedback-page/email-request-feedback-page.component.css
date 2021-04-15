@@ -1,4 +1,8 @@
 .main-div{
+  padding: 0px;
+}
+
+.search-field{
   padding: 60px 3rem;
 }
 
@@ -9,4 +13,10 @@
 th{
   background-color: red;
   color: white;
+}
+
+#btnsend-request{
+  color: white;
+  margin: 10px;
+  float: right;
 }

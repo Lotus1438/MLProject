@@ -1,15 +1,19 @@
+.main-div mat-card{
+    padding: 0px;
+}
+
 .main-div{
-    padding: 60px 3rem;
+  padding: 60px 3rem;
 }
 
 .toolbar{
   background-color: red;
   color: white;
-  padding: 0%;
+  padding: 20px;
 
 }
 
-.login-form{
+.log-in-form{
     padding: 20px;
 }
 

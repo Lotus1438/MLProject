@@ -2,12 +2,20 @@
   margin: 20px;
 }
 
+.main-div{
+  border: 1px solid black;
+  padding: 10px;
+  margin: 250px;
+  margin-top: 30px;
+}
+
 .dashboard-card {
   position: absolute;
   top: 15px;
   left: 15px;
   right: 15px;
   bottom: 15px;
+  text-align:start;
 }
 
 .more-button {
@@ -17,5 +25,18 @@
 }
 
 .dashboard-card-content {
-  text-align: center;
+  /* text-align: center; */
+  padding: 20px;
+  padding-left: 50px;
+}
+
+.text-area{
+  height: 50px;
+  width: 800px;
+}
+
+.btnReply{
+  margin: 10px;
+  height: 30px;
+  width: 80px;
 }

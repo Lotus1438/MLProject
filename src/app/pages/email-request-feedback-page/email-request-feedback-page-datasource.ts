@@ -6,6 +6,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface EmailRequestFeedbackPageItem {
+  // select: boolean;
   id: number;
   email: string;
 }
@@ -18,10 +19,10 @@ const EXAMPLE_DATA: EmailRequestFeedbackPageItem[] = [
   {id: 4, email: 'shenna.cañeda@mlhuillier.com'},
   {id: 5, email: 'jonalyn.mobilla@mlhuillier.com'},
   {id: 6, email: 'quency.atacador@mlhuillier.com'},
-  {id: 7, email: 'reina1.mates@mlhuillier.com'},
-  {id: 8, email: 'reina2.mates@mlhuillier.com'},
-  {id: 9, email: 'reina3.mates@mlhuillier.com'},
- 
+  {id: 7, email: 'roselyn.amoc@mlhuillier.com'},
+  {id: 8, email: 'merry-cris.ajoc@mlhuillier.com'},
+  {id: 9, email: 'ma-judelyn.cabalhao@mlhuillier.com'},
+
 ];
 
 /**
