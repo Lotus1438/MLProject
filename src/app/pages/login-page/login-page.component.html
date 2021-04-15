@@ -9,12 +9,17 @@
           <!-- email field -->
             <mat-form-field appearance="outline">
               <mat-label>Email Address</mat-label>
-              <input matInput type="email" placeholder="Email" matInput type="email" ngClass="{'invalid-input': email.invalid && (email.dirty || email.touched)}" required>
+              <input matInput type="email" formControlName="email" name="email"  placeholder="Email" matInput ngForm="email" required>
               <!-- <div class="mt-5" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid" class="invalid-feedback">
                 <div *ngIf="loginForm.get('email').errors.required">Email Name is required</div>
                 <div *ngIf="loginForm.get('email').errors.email">Email must be a valid email Address
                 </div>
                 </div> -->
+                <!-- sample email -->
+                <mat-error
+                *ngIf="loginForm?.controls?.email?.hasError('required')">
+                Full Name is <strong>required</strong>
+                </mat-error>
               <mat-error *ngIf="loginForm.errors?.required">
                 Required Email Address
               </mat-error>
@@ -22,12 +27,17 @@
             <!-- password field -->
             <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" matInput [type]="hidden ? 'password' : 'text'" ngClass="{'invalid-input': password.invalid && (password.dirty || password.touched)}" required>
+              <input matInput placeholder="Password" formControlName="password" matInput [type]="hidden ? 'password' : 'text'" required>
               <button mat-icon-button matSuffix (click)="hide()">
                 <mat-icon>{{hidden?'visibility_off' : 'visibility'}}</mat-icon>
               </button>
+              <!-- sample password -->
+              <mat-error
+              *ngIf="loginForm?.controls?.password?.hasError('required')">
+              Full Name is <strong>required</strong>
+              </mat-error>
             </mat-form-field>
-            <button mat-raised-button color="warn" type="submit" (click)="login()">Log in</button>
+            <button mat-raised-button color="warn" type="submit" (click)="login()" [disabled]="!loginForm.valid">Log in</button>
 
         </form>
     </mat-card>

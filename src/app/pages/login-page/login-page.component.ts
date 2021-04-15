@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 // import axios from 'axios';
 import { Router } from '@angular/router';
 // import { CookieService } from 'ngx-cookie-service';
-import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login-page',
