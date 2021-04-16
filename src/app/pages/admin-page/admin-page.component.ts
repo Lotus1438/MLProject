@@ -35,6 +35,10 @@ export class AdminPageComponent implements OnInit{
     this.hidden = !this.hidden;
   }
 
+  logout(){
+    this.hidden = !this.hidden;
+  }
+
   send(){
     console.log("Message send successfully!");
     Swal.fire({

@@ -1,0 +1,22 @@
+.main-content{
+  padding: 3px;
+}
+
+.div-content{
+  width: 500px;
+}
+
+.mat-item{
+  padding: 3px;
+}
+
+.btnCancel{
+  margin: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.btnCreate{
+  margin: 10px;
+}

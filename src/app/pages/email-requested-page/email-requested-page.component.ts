@@ -19,7 +19,17 @@ export class EmailRequestedPageComponent implements OnInit {
   }
 
   hidden = true;
+  hide = true;
+
   show(){
+    this.hidden = !this.hidden;
+  }
+
+  create(){
+    this.hide = !this.hide;
+  }
+
+  cancel(){
     this.hidden = !this.hidden;
   }
 

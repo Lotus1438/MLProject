@@ -13,6 +13,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+
 
 
 
@@ -72,6 +74,7 @@ import { EmailRequestedPageComponent } from './pages/email-requested-page/email-
     MatGridListModule,
     MatCheckboxModule,
     MatDividerModule,
+    MatAutocompleteModule,
 
 
 

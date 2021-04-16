@@ -3,7 +3,7 @@
 }
 
 .main-div{
-  border: 1px solid black;
+  box-shadow: 3px 3px 3px 5px lightgrey;
   padding: 10px;
   margin: 250px;
   margin-top: 30px;
@@ -35,8 +35,27 @@
   width: 800px;
 }
 
+.div-content{
+  margin: 10px;
+}
+
 .btnReply{
   margin: 10px;
   height: 30px;
   width: 80px;
+  border-radius: 5px;
+}
+
+.btnSend{
+  margin: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+}
+
+.btnCancel{
+  margin: 10px;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
 }

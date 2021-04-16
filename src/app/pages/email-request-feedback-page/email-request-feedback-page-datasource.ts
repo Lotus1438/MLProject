@@ -7,21 +7,21 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface EmailRequestFeedbackPageItem {
   // select: boolean;
-  id: number;
+  select: boolean;
   email: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: EmailRequestFeedbackPageItem[] = [
-  {id: 1, email: 'reina.mates@mlhuillier.com'},
-  {id: 2, email: 'jennie-joy.tomalon@mlhuillier.com'},
-  {id: 3, email: 'rhea-may.ardiente@mlhuillier.com'},
-  {id: 4, email: 'shenna.cañeda@mlhuillier.com'},
-  {id: 5, email: 'jonalyn.mobilla@mlhuillier.com'},
-  {id: 6, email: 'quency.atacador@mlhuillier.com'},
-  {id: 7, email: 'roselyn.amoc@mlhuillier.com'},
-  {id: 8, email: 'merry-cris.ajoc@mlhuillier.com'},
-  {id: 9, email: 'ma-judelyn.cabalhao@mlhuillier.com'},
+  {select: true, email: 'reina.mates@mlhuillier.com'},
+  {select: true, email: 'jennie-joy.tomalon@mlhuillier.com'},
+  {select: false, email: 'rhea-may.ardiente@mlhuillier.com'},
+  {select: false, email: 'shenna.cañeda@mlhuillier.com'},
+  {select: false, email: 'jonalyn.mobilla@mlhuillier.com'},
+  {select: true, email: 'quency.atacador@mlhuillier.com'},
+  {select: false, email: 'roselyn.amoc@mlhuillier.com'},
+  {select: true, email: 'merry-cris.ajoc@mlhuillier.com'},
+  {select: false, email: 'ma-judelyn.cabalhao@mlhuillier.com'},
 
 ];
 
@@ -89,7 +89,7 @@ export class EmailRequestFeedbackPageDataSource extends DataSource<EmailRequestF
       const isAsc = this.sort?.direction === 'asc';
       switch (this.sort?.active) {
         case 'email': return compare(a.email, b.email, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'select': return compare(+a.select, +b.select, isAsc);
         default: return 0;
       }
     });

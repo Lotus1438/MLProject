@@ -1,19 +1,39 @@
 
+
+
 <div class="main-content" (click)="show()">
 
     <h3>Sends Request To: </h3>
     <hr>
-    <mat-icon>star_rate</mat-icon><mat-list-item>name.email@mlhuillier.com</mat-list-item>
+   <mat-list-item>name.email@mlhuillier.com</mat-list-item>
     <mat-divider></mat-divider>
 
 </div>
+<div class="main-div">
 
-<div class="div-content" [hidden]="hidden">
-  <p>emial@mlhuillier</p>
-  <p>sends feedback</p>
-  <p>sends feedback</p>
-  <button mat-raised-button color="warn" (click)="send()">Send Message</button>
+  <!-- create message field   -->
+  <div class="div-content" [hidden]="hidden">
+    <p><mat-icon color="grey">star_rate</mat-icon>emial@mlhuillier</p>
+    <p><mat-icon color="warn">star_rate</mat-icon>sends feedback</p>
+    <p><mat-icon>star_rate</mat-icon>sends feedback</p>
+    <button class="btnCreate" mat-raised-button appearance="border" (click)="create()">Create Message</button>
+  </div>
+
+   <!-- send message field -->
+   <div [hidden]="hide">
+    <mat-card>
+      <mat-card-header>To: name@email.mlhuillier.com</mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <textarea matInput class="text-area"></textarea>
+        <br>
+        <button (click)="cancel()" mat-flat-button matPreffix><mat-icon>cancel</mat-icon>Cancel</button>
+        <button (click)="send()" mat-flat-button matPreffix><mat-icon>send</mat-icon>Send</button>
+      </mat-card-content>
+    </mat-card>
+    </div>
+
 </div>
+
 
 
 

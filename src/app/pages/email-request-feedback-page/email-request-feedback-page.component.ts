@@ -4,6 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { EmailRequestFeedbackPageDataSource, EmailRequestFeedbackPageItem } from './email-request-feedback-page-datasource';
 import Swal from 'sweetalert2';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 
@@ -12,25 +14,39 @@ import Swal from 'sweetalert2';
   templateUrl: './email-request-feedback-page.component.html',
   styleUrls: ['./email-request-feedback-page.component.css']
 })
-export class EmailRequestFeedbackPageComponent implements AfterViewInit {
+export class EmailRequestFeedbackPageComponent implements AfterViewInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<EmailRequestFeedbackPageItem>;
   dataSource: EmailRequestFeedbackPageDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['select', 'name'];
 
   constructor() {
     this.dataSource = new EmailRequestFeedbackPageDataSource();
   }
 
+
+
+  // ngOnInit(): void{
+
+  // }
+  selectForm = new FormGroup ({
+    select: new FormControl (' ', [Validators.required]),
+  })
+
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     this.table.dataSource = this.dataSource;
+
+
   }
 
+  submit(){
+    console.log("Login Successfully!");
+  }
 
 
   sendRequest(){
@@ -50,8 +66,6 @@ export class EmailRequestFeedbackPageComponent implements AfterViewInit {
           'Your requst feedback form is succesfully sent :)',
           'success'
         )
-      // For more information about handling dismissals please visit
-      // https://sweetalert2.github.io/#handling-dismissals
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
@@ -61,4 +75,5 @@ export class EmailRequestFeedbackPageComponent implements AfterViewInit {
       }
     })
   }
+
 }

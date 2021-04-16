@@ -1,80 +1,71 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="25">
-        <mat-toolbar class="toolbar">
-          <img src="https://static.wixstatic.com/media/1e3920_14bec40ae7c84f43983e962a7a9660e3.png/v1/fill/w_159,h_139,al_c,q_85,usm_0.66_1.00_0.01/1e3920_14bec40ae7c84f43983e962a7a9660e3.webp" alt="mlhuillier-log" height="50px">
-          Log In
-        </mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="log-in-form" (ngSubmit)="loginForm.valid && login()" [formGroup]="loginForm">
+  <mat-card fxFlex="25">
+    <mat-toolbar class="toolbar">
+      <img
+        src="https://static.wixstatic.com/media/1e3920_14bec40ae7c84f43983e962a7a9660e3.png/v1/fill/w_159,h_139,al_c,q_85,usm_0.66_1.00_0.01/1e3920_14bec40ae7c84f43983e962a7a9660e3.webp"
+        alt="mlhuillier-log"
+        height="50px"
+      />
+      Log In
+    </mat-toolbar>
+    <form
+      fxLayoutAlign="stretch"
+      fxLayout="column"
+      class="log-in-form"
+      (ngSubmit)="loginForm.valid && login()"
+      [formGroup]="loginForm"
+    >
+      <!-- email field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input
+        autocomplete="on"
+          matInput
+          type="email"
+          formControlName="email"
+          name="email"
+          placeholder="Email"
+          matInput
+          ngForm="email"
+          required
+        />
 
-          <!-- email field -->
-            <mat-form-field appearance="outline">
-              <mat-label>Email Address</mat-label>
-              <input matInput type="email" formControlName="email" name="email"  placeholder="Email" matInput ngForm="email" required>
-              <!-- <div class="mt-5" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid" class="invalid-feedback">
-                <div *ngIf="loginForm.get('email').errors.required">Email Name is required</div>
-                <div *ngIf="loginForm.get('email').errors.email">Email must be a valid email Address
-                </div>
-                </div> -->
-                <!-- sample email -->
-                <mat-error
-                *ngIf="loginForm?.controls?.email?.hasError('required')">
-                Full Name is <strong>required</strong>
-                </mat-error>
-              <mat-error *ngIf="loginForm.errors?.required">
-                Required Email Address
-              </mat-error>
-            </mat-form-field>
-            <!-- password field -->
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput placeholder="Password" formControlName="password" matInput [type]="hidden ? 'password' : 'text'" required>
-              <button mat-icon-button matSuffix (click)="hide()">
-                <mat-icon>{{hidden?'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-              <!-- sample password -->
-              <mat-error
-              *ngIf="loginForm?.controls?.password?.hasError('required')">
-              Full Name is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <button mat-raised-button color="warn" type="submit" (click)="login()" [disabled]="!loginForm.valid">Log in</button>
+        <mat-error *ngIf="loginForm?.controls?.email?.hasError('required')">
+          Required
+        </mat-error>
+        <!-- <mat-error *ngIf="loginForm.errors?.required">
+          Required
+        </mat-error> -->
+      </mat-form-field>
+      <!-- password field -->
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+        autocomplete="on"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+          matInput
+          [type]="hidden ? 'password' : 'text'"
+          required
+        />
+        <button mat-icon-button matSuffix (click)="hide()">
+          <mat-icon>{{ hidden ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
 
-        </form>
-    </mat-card>
-</div>
-
-
-<!-- <mat-card>
-  <mat-card-content>
-    <div class="header">
-      <h2>LOGIN</h2>
-    </div>
-    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
-
-
-      <div class="email-input">
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Email</mat-label>
-          <input formControlName="email" matInput required/>
-          <mat-error *ngIf="loginForm.get('email')?.errors.required">
-            Required Email Address
-          </mat-error>
-        </mat-form-field>
-      </div>
-
-      <div>
-        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>Password</mat-label>
-          <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required/>
-          <button mat-icon-button matSuffix (click)="hide = !hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error *ngIf="loginForm.get('password')?.errors.required">
-            Required Password
-          </mat-error>
-        </mat-form-field>
-      </div>
-      <button mat-flat-button mat-raised-button color="red">Log In</button>
+        <mat-error *ngIf="loginForm?.controls?.password?.hasError('required')">
+          Required
+        </mat-error>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="warn"
+        type="submit"
+        (click)="login()"
+        [disabled]="!loginForm.valid"
+      >
+        Log in
+      </button>
     </form>
-  </mat-card-content>
-</mat-card> -->
+  </mat-card>
+</div>

@@ -1,17 +1,42 @@
 <app-navbar></app-navbar>
+
+
 <div class="main-div">
-  <app-email-requested-page></app-email-requested-page>
+  <!-- sample here  -->
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <span>Log out</span>
+    </button>
+  </mat-menu>
 
-  <button class="btnReply" (click)="reply()" [hidden]="!hidden"  mat-icon-button matPreffix>
-    <mat-icon>reply</mat-icon>Reply</button>
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    class="dropdown"
+    justify="flex-end"
+  >
+    <mat-icon justify="flex-end">more_vert</mat-icon>
+  </button>
 
-  <!-- send message field -->
-  <div [hidden]="hidden">
+
+  <!-- email request card  -->
+  <mat-card>
+    <app-email-requested-page></app-email-requested-page>
+
+    <button class="btnReply" (click)="reply()" [hidden]="!hidden"  mat-icon-button matPreffix>
+      <mat-icon>reply</mat-icon>Reply</button>
+  </mat-card>
+
+   <!-- send message field -->
+   <div  class="div-content" [hidden]="hidden">
+  <mat-card>
     <mat-card-header>To: name@email.mlhuillier.com</mat-card-header>
     <mat-card-content class="dashboard-card-content">
       <textarea matInput class="text-area"></textarea>
-      <button (click)="cancel()">Cancel</button>
-      <button (click)="send()">Send</button>
+      <br>
+      <button (click)="cancel()" mat-flat-button matPreffix><mat-icon>cancel</mat-icon>Cancel</button>
+      <button (click)="send()" mat-flat-button matPreffix><mat-icon>send</mat-icon>Send</button>
     </mat-card-content>
+  </mat-card>
   </div>
 </div>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-// import axios from 'axios';
 import { Router } from '@angular/router';
-// import { CookieService } from 'ngx-cookie-service';
+
 
 
 @Component({
@@ -20,8 +19,8 @@ export class LoginPageComponent implements OnInit {
   }
 
   loginForm = new FormGroup ({
-    email: new FormControl (' ', [Validators.required, Validators.email]),
-    password: new FormControl (' ', Validators.required),
+    email: new FormControl ('', [Validators.required, Validators.email]),
+    password: new FormControl ('', [Validators.required]),
   })
 
 
