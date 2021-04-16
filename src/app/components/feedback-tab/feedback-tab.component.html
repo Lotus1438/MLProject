@@ -1,0 +1,80 @@
+<!-- <form [formGroup]="feedbackQuestionLists" (ngSubmit)="feedbackQuestionLists.valid && nextBtn()"> -->
+<form [formGroup]="feedbackQuestionLists">
+
+
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span class="span">Tell Us What You Think!</span>
+        </mat-toolbar-row>
+    </mat-toolbar><br>
+
+    <h4 style="text-align: center;">
+        We would like your feedback to improve our services.
+        <h5>Help us in answerong the following questions.</h5>
+    </h4><br>
+
+    <div>
+        <label for="question1">
+                What should I stop doing?
+                <mat-error *ngIf="feedbackQuestionLists?.controls?.question1?.hasError('required')">
+                    <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                </mat-error>
+            </label>
+        <textarea matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
+    </div><br>
+
+    <div>
+        <label for="question2">
+                What should I continue doing?
+                <mat-error *ngIf="feedbackQuestionLists?.controls?.question2?.hasError('required')">
+                    <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                </mat-error>
+            </label>
+        <textarea matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
+    </div><br>
+
+    <div>
+        <label for="question3">
+                What should I start doing?
+                <mat-error *ngIf="feedbackQuestionLists?.controls?.question3?.hasError('required')">
+                    <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                </mat-error>
+            </label>
+
+        <textarea matInput formControlName="question3" placeholder="I should start..." cols="80" rows="5" required></textarea>
+    </div><br>
+
+
+    <div>
+        <button mat-raised-button color="primary" type="submit" (click)="nextBtn()" [disabled]="!feedbackQuestionLists.valid">NEXT</button>
+        <button mat-raised-button color="warn" type="submit" (click)="cancelBtn()">CANCEL</button>
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SECOND -->
+<!-- <form focusInvalidInput [formGroup]="feedbackQuestionLists" (ngSubmit)="submit()">
+    <label for="question1">First Name</label>
+    <input formControlName="question1" id="question1" />
+
+    <label for="question1">Last Name</label>
+    <input formControlName="question1" id="question1" />
+
+    <label for="question1">Last Name</label>
+    <input formControlName="question1" id="question1" />
+
+    <br />
+    <button>submit</button>
+</form> -->
