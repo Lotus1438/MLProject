@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EmailRequest } from './models';
 
@@ -6,20 +7,29 @@ import { EmailRequest } from './models';
 })
 export class EmailService {
 
+  // private url = "https://jsonplaceholder.typicode.com/posts";
+  private url = "http://127.0.0.1:8000/api/";
 
-
-  private emails:EmailRequest[] = [
-    { firstName:'Juan', lastName:'Luna', status: true, feedback: 'asddffdgsgf' },
-    { firstName:'Jose', lastName:'Rizal', status: true, feedback: 'ahtdthdhtghy' },
-    { firstName:'Pedro', lastName:'Penduko', status: true, feedback: 'asrtytfufvhj' },
-    { firstName:'Uzumaki', lastName:'Naruto', status: true, feedback: 'htshtgjhf' },
-    { firstName:'Cloud', lastName:'Strife', status: true, feedback: 'kufhgfjhj' },
+  private emailRequests:EmailRequest[] = [
+    { id: 0, email:'reina.mates@mlhllier.com'},
+    { id: 1, email:'rhea-may.ardiente@mlhllier.com'},
+    { id: 3, email:'jenie-joy.tomalon@mlhllier.com'},
+    { id: 4, email:'jonalyn.mobilla@mlhllier.com'},
+    { id: 5, email:'shenna.cañeda@mlhllier.com'},
+    { id: 6, email:'quency.atacador@mlhllier.com'},
   ]
 
-  constructor() { }
+  constructor( private http : HttpClient) { }
 
-  getEmails(){
-    return this.emails;
+  // getEmails(){
+  //   return this.emailRequests;
+  // }
+
+  sendEmail(data:any){
+    return this.http.post(this.url+"sending/emails",{data});
   }
 
+  getAllEmails(){
+    return this.http.get(this.url+"getting/emails");
+  }
 }

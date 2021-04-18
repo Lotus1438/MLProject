@@ -35,7 +35,7 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-found-page.component';
 import { EmailRequestedPageComponent } from './pages/email-requested-page/email-requested-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -47,8 +47,6 @@ import { EmailRequestedPageComponent } from './pages/email-requested-page/email-
     AdminPageComponent,
     PageNotFoundPageComponent,
     EmailRequestedPageComponent,
-
-
 
   ],
   imports: [
@@ -75,8 +73,7 @@ import { EmailRequestedPageComponent } from './pages/email-requested-page/email-
     MatCheckboxModule,
     MatDividerModule,
     MatAutocompleteModule,
-
-
+    HttpClientModule
 
   ],
   providers: [],

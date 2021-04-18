@@ -3,25 +3,28 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { EmailService } from 'src/app/email.service';
 
 // TODO: Replace this with your own data model type
 export interface EmailRequestFeedbackPageItem {
   // select: boolean;
   select: boolean;
+  disable: boolean;
   email: string;
-}
 
+}
 // TODO: replace this with real data from your application
+
 const EXAMPLE_DATA: EmailRequestFeedbackPageItem[] = [
-  {select: true, email: 'reina.mates@mlhuillier.com'},
-  {select: true, email: 'jennie-joy.tomalon@mlhuillier.com'},
-  {select: false, email: 'rhea-may.ardiente@mlhuillier.com'},
-  {select: false, email: 'shenna.cañeda@mlhuillier.com'},
-  {select: false, email: 'jonalyn.mobilla@mlhuillier.com'},
-  {select: true, email: 'quency.atacador@mlhuillier.com'},
-  {select: false, email: 'roselyn.amoc@mlhuillier.com'},
-  {select: true, email: 'merry-cris.ajoc@mlhuillier.com'},
-  {select: false, email: 'ma-judelyn.cabalhao@mlhuillier.com'},
+  {select: false, disable: false, email: 'reina.mates@mlhuillier.com'},
+  {select: false, disable: false, email: 'jennie-joy.tomalon@mlhuillier.com'},
+  {select: false, disable: false,  email: 'rhea-may.ardiente@mlhuillier.com'},
+  {select: false,disable: false, email: 'shenna.cañeda@mlhuillier.com'},
+  {select: false,disable: false, email: 'jonalyn.mobilla@mlhuillier.com'},
+  {select: false,disable: false, email: 'quency.atacador@mlhuillier.com'},
+  {select: false,disable: false, email: 'roselyn.amoc@mlhuillier.com'},
+  {select: false,disable: false, email: 'merry-cris.ajoc@mlhuillier.com'},
+  {select: false,disable: false, email: 'ma-judelyn.cabalhao@mlhuillier.com'},
 
 ];
 
@@ -31,14 +34,16 @@ const EXAMPLE_DATA: EmailRequestFeedbackPageItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class EmailRequestFeedbackPageDataSource extends DataSource<EmailRequestFeedbackPageItem> {
-  data: EmailRequestFeedbackPageItem[] = EXAMPLE_DATA;
-  paginator: MatPaginator | undefined;
-  sort: MatSort | undefined;
 
-  constructor() {
+
+  constructor( ) {
     super();
   }
 
+  data: EmailRequestFeedbackPageItem[] = EXAMPLE_DATA;
+  paginator: MatPaginator | undefined;
+  sort: MatSort | undefined;
+  counter = 0;
   /**
    * Connect this data source to the table. The table will only update when
    * the returned stream emits new items.
@@ -90,6 +95,7 @@ export class EmailRequestFeedbackPageDataSource extends DataSource<EmailRequestF
       switch (this.sort?.active) {
         case 'email': return compare(a.email, b.email, isAsc);
         case 'select': return compare(+a.select, +b.select, isAsc);
+        case 'disable': return compare(+a.select, +b.select, isAsc);
         default: return 0;
       }
     });
