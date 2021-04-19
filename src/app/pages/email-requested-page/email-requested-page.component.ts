@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EmailService } from 'src/app/email.service';
+import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
 import { EmailRequest } from '../../models';
 

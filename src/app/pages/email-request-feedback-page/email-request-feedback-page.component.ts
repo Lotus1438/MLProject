@@ -6,7 +6,7 @@ import { EmailRequestFeedbackPageDataSource, EmailRequestFeedbackPageItem } from
 import Swal from 'sweetalert2';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { EmailService } from 'src/app/email.service';
+import { EmailService } from 'src/app/services/email.service';
 
 
 

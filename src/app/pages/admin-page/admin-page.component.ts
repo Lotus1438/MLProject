@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import {EmailService} from '../../email.service';
+import {EmailService} from 'src/app/services/email.service';
 import {EmailRequest} from '../../models';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
