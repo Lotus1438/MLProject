@@ -16,23 +16,21 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '@angular/material/core';
+import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { ContentsPageComponent } from './components/contents-page/contents-page.component';
-import { TabularComponent } from './components/tabular/tabular.component';
-import { FeedbackTabComponent } from './components/feedback-tab/feedback-tab.component';
-import { PerformanceTabComponent } from './components/performance-tab/performance-tab.component';
+import { GridComponent } from './components/grid/grid.component';
+import { ContentPageComponent } from './components/content-page/content-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationBarComponent,
-    ContentsPageComponent,
-    TabularComponent,
-    FeedbackTabComponent,
-    PerformanceTabComponent,
+    GridComponent,
+    ContentPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,10 +48,9 @@ import { PerformanceTabComponent } from './components/performance-tab/performanc
     MatGridListModule,
     MatTabsModule,
     MatFormFieldModule,
-    
-    
+    MatRadioModule,
   ],
-  providers: [{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
+  providers: [{ provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,174 @@
+<div>
+    <mat-toolbar>
+        <span class="header1">First Questionnaire &nbsp; |</span>
+        <span class="header2">&nbsp; Second Questionnaire</span>
+    </mat-toolbar><br>
+
+
+    <div [hidden]="isHide">
+        <form [formGroup]="feedbackQuestionLists">
+            <mat-toolbar>
+                <mat-toolbar-row>
+                    <span class="span">Tell Us What You Think!</span>
+                </mat-toolbar-row>
+            </mat-toolbar><br>
+
+            <h4 style="text-align: center;">
+                We would like your feedback to improve our services.
+                <h5>Help us in answerong the following questions.</h5>
+            </h4><br>
+
+            <div>
+                <label for="question1">
+                        What should I stop doing?
+                        <mat-error *ngIf="feedbackQuestionLists?.controls?.question1?.hasError('required')">
+                            <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                        </mat-error>
+                    </label><br>
+                <textarea matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
+            </div><br>
+
+            <div>
+                <label for="question2">
+                        What should I continue doing?
+                        <mat-error *ngIf="feedbackQuestionLists?.controls?.question2?.hasError('required')">
+                            <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                        </mat-error>
+                    </label><br>
+                <textarea matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
+            </div><br>
+
+            <div>
+                <label for="question3">
+                        What should I start doing?
+                        <mat-error *ngIf="feedbackQuestionLists?.controls?.question3?.hasError('required')">
+                            <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
+                        </mat-error>
+                    </label><br>
+                <textarea matInput formControlName="question3" placeholder="I should start..." cols="80" rows="5" required></textarea>
+            </div><br>
+
+            <div>
+                <!-- <button mat-raised-button color="warn" type="submit" (click)="cancelBtn()">CANCEL</button> -->
+                <button mat-raised-button color="primary" type="submit" (click)="nextBtn()" [disabled]="!feedbackQuestionLists.valid">NEXT</button>
+            </div>
+        </form>
+    </div>
+
+
+    <div [hidden]="!isHide">
+        <mat-toolbar>
+            <mat-toolbar-row>
+                <span class="span">Rate Our Work</span>
+            </mat-toolbar-row>
+        </mat-toolbar><br>
+
+        <form name="frmSurvey">
+            <table>
+                <tr>
+                    <td><label for="category">Performance Category</label></td>
+                    <td><label for="outstanding">Outstanding</label></td>
+                    <td><label for="good">Good</label></td>
+                    <td><label for="average">Average</label></td>
+                    <td><label for="fair">Fair</label></td>
+                    <td><label for="poor">Poor</label></td>
+                </tr>
+
+                <tr>
+                    <td>Category One</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Two</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Three</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Four</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Five</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Six</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Seven</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Eight</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Nine</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+
+                <tr>
+                    <td>Category Ten</td>
+                    <td><input type="radio" name="outstanding" value="5" id="outstanding" title="Outstanding" /></td>
+                    <td><input type="radio" name="good" value="4" id="good" title="Good" /></td>
+                    <td><input type="radio" name="average" value="3" id="average" title="Average" /></td>
+                    <td><input type="radio" name="fair" value="2" id="fair" title="Fair" /></td>
+                    <td><input type="radio" name="poor" value="1" id="poor" title="Poor" /></td>
+                </tr>
+            </table><br>
+
+            <div>
+                <!-- <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">SUBMIT</button> -->
+                <button mat-raised-button color="warn" type="submit" (click)="nextBtn()">PREVIOUS</button>
+            </div>
+        </form>
+    </div>
+</div>
