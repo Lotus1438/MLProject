@@ -36,12 +36,11 @@ export class LoginPageComponent implements OnInit {
 
 login(){
   axios.post("https://mlback-end.herokuapp.com/api/login", this.loginForm.value).then(res =>{
-  console.log(res.data);
-  window.localStorage.setItem('EMAIL_TOKEN',res.data.access_token);
+  console.log(res.data.token);
+  window.localStorage.setItem('EMAIL_TOKEN',res.data.token);
   return this.router.navigate(['/email-request-feedback-page']);
   }).catch(err => {
-    console.log("Error!");
-
+    console.log("Error!",err);
   })
 
 }

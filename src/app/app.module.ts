@@ -36,6 +36,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-found-page.component';
 import { EmailRequestedPageComponent } from './pages/email-requested-page/email-requested-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RequestFeedbackPageComponent } from './pages/request-feedback-page/request-feedback-page.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     AdminPageComponent,
     PageNotFoundPageComponent,
     EmailRequestedPageComponent,
+    RequestFeedbackPageComponent,
 
   ],
   imports: [
