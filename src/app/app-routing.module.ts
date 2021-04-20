@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContentPageComponent } from './components/content-page/content-page.component';
-import { GridComponent } from './components/grid/grid.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { EmailRequestComponent } from './components/email-request/email-request.component';
 
 const routes: Routes = [
   { path: 'navigation-bar', component: NavigationBarComponent },
-  { path: 'grid', component: GridComponent },
-  { path: 'content-page', component: ContentPageComponent },
-  // { path: '', component: 'contents-page', pathMatch: 'full'}
+  { path: 'feedback-form', component: FeedbackFormComponent },
+  { path: 'email-request', component: EmailRequestComponent },
+  { path: '',   redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

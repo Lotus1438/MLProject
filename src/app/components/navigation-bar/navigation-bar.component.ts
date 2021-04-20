@@ -6,8 +6,9 @@ import { map, shareReplay } from 'rxjs/operators';
 @Component({
   selector: 'app-navigation-bar',
   templateUrl: './navigation-bar.component.html',
-  styleUrls: ['./navigation-bar.component.css']
+  styleUrls: ['./navigation-bar.component.css'],
 })
+
 export class NavigationBarComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -17,5 +18,4 @@ export class NavigationBarComponent {
     );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
-
 }
