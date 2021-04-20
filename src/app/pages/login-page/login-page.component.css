@@ -6,7 +6,15 @@
   padding: 60px 3rem;
 }
 
+.spinner{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .toolbar{
+  position: relative;
   background-color: red;
   color: white;
   padding: 20px;

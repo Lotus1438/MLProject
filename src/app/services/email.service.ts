@@ -18,6 +18,7 @@ export class EmailService {
   getAllEmails() {
     return this.http.get(this.url + 'getting/emails');
   }
+
 }
 
 

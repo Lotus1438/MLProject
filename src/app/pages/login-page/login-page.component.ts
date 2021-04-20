@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+
+
 
 
 
@@ -12,7 +16,7 @@ import axios from 'axios';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private spinner: MatProgressSpinnerModule){}
 
 
   ngOnInit(): void {
@@ -25,8 +29,7 @@ export class LoginPageComponent implements OnInit {
   })
 
 
-
-
+  load = true;
   hidden = true;
 
   hide(){
@@ -35,12 +38,15 @@ export class LoginPageComponent implements OnInit {
 
 
 login(){
+  console.log(this.loginForm.value)
+  this.load = false;
   axios.post("https://mlback-end.herokuapp.com/api/login", this.loginForm.value).then(res =>{
   console.log(res.data.token);
   window.localStorage.setItem('EMAIL_TOKEN',res.data.token);
-  return this.router.navigate(['/email-request-feedback-page']);
+  this.load = false;
+  return this.router.navigate(['/request-feedback-page']);
   }).catch(err => {
-    console.log("Error!",err);
+    Swal.fire('Opppss!','Credential does not match in our data', 'warning');
   })
 
 }

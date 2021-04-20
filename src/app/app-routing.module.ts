@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: '', component: LoginPageComponent},
   {path: 'login-page', component: LoginPageComponent},
   {path: 'email-request-feedback-page', component: EmailRequestFeedbackPageComponent, canActivate : [AccessTokenGuard]},
-  {path: 'request-email', component: RequestFeedbackPageComponent, canActivate : [AccessTokenGuard]},
+  {path: 'request-feedback-page', component: RequestFeedbackPageComponent, canActivate : [AccessTokenGuard]},
   {path: 'admin-page', component: AdminPageComponent},
   {path: 'email-requested-page', component: EmailRequestedPageComponent},
   {path: '**', redirectTo: 'PageNotFoundPageComponent', pathMatch: 'full'},

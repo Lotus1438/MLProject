@@ -14,6 +14,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 
@@ -75,7 +77,8 @@ import { RequestFeedbackPageComponent } from './pages/request-feedback-page/requ
     MatCheckboxModule,
     MatDividerModule,
     MatAutocompleteModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
 
   ],
   providers: [],
