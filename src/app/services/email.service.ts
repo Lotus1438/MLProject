@@ -9,14 +9,15 @@ export class EmailService {
 
   constructor(private http: HttpClient) {}
 
-  private url = 'http://127.0.0.1:8000/api/';
+  // private url = 'http://127.0.0.1:8000/api/';
+  private url = 'https://mlback-end.herokuapp.com/api/'
 
   sendEmail(data: any) {
     return this.http.post(this.url + 'sending/emails', { data });
   }
 
   getAllEmails() {
-    return this.http.get(this.url + 'getting/emails');
+    return this.http.get(this.url + 'email');
   }
 
 }

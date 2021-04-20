@@ -47,6 +47,7 @@ login(){
   return this.router.navigate(['/request-feedback-page']);
   }).catch(err => {
     Swal.fire('Opppss!','Credential does not match in our data', 'warning');
+  this.load = false;
   })
 
 }
