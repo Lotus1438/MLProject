@@ -26,7 +26,7 @@ export class RequestFeedbackPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmails();
-    (<HTMLInputElement> document.getElementById("btnsend-request-2")).disabled = true;
+    (<HTMLInputElement> document.getElementById("btnsend-request")).disabled = true;
   }
 
   getEmails(){
@@ -51,22 +51,16 @@ export class RequestFeedbackPageComponent implements OnInit {
       confirmButtonText: 'Yes, send it!',
       cancelButtonText: 'No, cancel it'
     }).then((result) => {
+
       if (result.value) {
-        const test = window.localStorage.getItem('EMAIL_TOKEN');
-        let name:string = test!;
-        const AuthStr = 'Bearer '.concat(name);
-        axios.post("https://mlback-end.herokuapp.com/api/emails", { headers: { Authorization: AuthStr } })
-          .then(response => {
-            this.emails = response.data;
-          })
-          .catch((error) => {
-            console.log('error ' + error);
-          });
+        this.service.sendEmail(this.myArray).subscribe((data:any)=>{
+          console.log(data);
 
           Swal.fire(
             'Send!',
             'success'
           )
+        })
 
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
@@ -78,15 +72,11 @@ export class RequestFeedbackPageComponent implements OnInit {
     })
   }
 
-  submit(){
-    console.log('Request');
-  }
-
   Check(event:MatCheckboxChange): void {
     var id = event.source.id.split('-')[2];
     var index = Number(id);
     var data = document.getElementsByClassName('example-margin');
-    var element =  (<HTMLInputElement> document.getElementById("btnsend-request-2"));
+    var element =  (<HTMLInputElement> document.getElementById("btnsend-request"));
     var email = data[index-1].parentElement?.parentElement?.lastElementChild?.textContent
     let name:string = email!;
     var indexName = this.myArray.indexOf(name);
@@ -98,6 +88,6 @@ export class RequestFeedbackPageComponent implements OnInit {
       this.cnt += 1;
       this.myArray.push(name)
     }
-    this.cnt >= 5 && this.cnt <= 7 ? element.disabled = false : element.disabled = true;
+    this.cnt >= 5 && this.cnt <= 7 ? element.disabled = true : element.disabled = false;
 }
 }

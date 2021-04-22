@@ -43,11 +43,11 @@ login(){
   axios.post("https://mlback-end.herokuapp.com/api/login", this.loginForm.value).then(res =>{
   console.log(res.data.token);
   window.localStorage.setItem('EMAIL_TOKEN',res.data.token);
-  this.load = false;
+  // this.load = false;
   return this.router.navigate(['/request-feedback-page']);
   }).catch(err => {
     Swal.fire('Opppss!','Credential does not match in our data', 'warning');
-  this.load = false;
+  this.load = true;
   })
 
 }

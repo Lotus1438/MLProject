@@ -8,9 +8,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { EmailService } from 'src/app/services/email.service';
 
-
-
-
 @Component({
   selector: 'app-email-request-feedback-page',
   templateUrl: './email-request-feedback-page.component.html',

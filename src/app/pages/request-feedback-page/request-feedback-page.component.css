@@ -1,0 +1,29 @@
+#table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td, #table th{
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
+#table tr:hover {background-color: #ddd;}
+
+#table tr {
+  text-align: center;
+}
+
+#btnsend-request{
+  color: white;
+  margin: 20px;
+  float: right;
+}
