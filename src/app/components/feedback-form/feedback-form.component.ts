@@ -18,7 +18,7 @@ export class FeedbackFormComponent implements OnInit {
   });
 
   // For Rate Scale Radio Button
-  public isRequired = true;
+  // public isRequired = true;
   public feedbackRateScale = new FormGroup({
     categoryOne: new FormControl(null, [Validators.required]),
     categoryTwo: new FormControl(null, [Validators.required]),
@@ -32,12 +32,16 @@ export class FeedbackFormComponent implements OnInit {
     categoryTen: new FormControl(null, [Validators.required])
   });
 
+  ;
+
+
+
   // Maximun words (NOT WORKING HUHU)
   // public value = 'Dear friend,';
   // public maxlength = 100;
   // public charachtersCount!: number;
   // public counter: string = '';
-  
+
 
   // public ngOnInit() {
   //   this.charachtersCount = this.value ? this.value.length : 0;
@@ -49,22 +53,32 @@ export class FeedbackFormComponent implements OnInit {
   //   this.counter = '${this.charachtersCount}/${this.maxlength}';
   // }
 
-    constructor(private route: Router) { }
+  constructor(private route: Router) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
 
-    }
+  }
+
+  // Change text color of span
+  textColor = false;
+  // status = 'Enable'
 
   // Hide and Show Function
   isHide = false;
+
   nextBtn() {
     console.log("User's Input: ", this.feedbackQuestionLists);
     if (this.isHide) {
       this.isHide = false;
+      this.textColor = false;
+
     } else {
       this.isHide = true;
+      this.textColor = true;
     }
   }
+
+  
 
   // Feedback Done
   submitBtn() {

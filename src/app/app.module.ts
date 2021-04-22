@@ -18,7 +18,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
-import { EmailRequestComponent } from './components/email-request/email-request.component';
+import { SampleComponent } from './components/sample/sample.component';
 
 @NgModule({
 
@@ -26,7 +26,7 @@ import { EmailRequestComponent } from './components/email-request/email-request.
     AppComponent,
     NavigationBarComponent,
     FeedbackFormComponent,
-    EmailRequestComponent,
+    SampleComponent,
 
   ],
 

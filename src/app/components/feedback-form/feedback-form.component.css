@@ -1,4 +1,19 @@
+body {
+    max-width: auto;
+}
+
 button {
     float: right;
     margin-left: 5px;
+}
+
+.span {
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+table #category {
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
 }
