@@ -1,10 +1,7 @@
-body {
-    max-width: auto;
-}
-
 button {
     float: right;
     margin-left: 5px;
+    margin-bottom: 5%;
 }
 
 .span {
@@ -17,3 +14,8 @@ table #category {
     padding: 10px;
     margin: auto;
 }
+
+
+/* textarea {
+    width: auto;
+} */
