@@ -42,6 +42,25 @@ export class RequestFeedbackPageComponent implements OnInit {
       });
   }
 
+  Check(event:MatCheckboxChange): void {
+    var id = event.source.id.split('-')[2];
+    var index = Number(id);
+    var data = document.getElementsByClassName('example-margin');
+    var element =  (<HTMLInputElement> document.getElementById("btnsend-request"));
+    var email = data[index-1].parentElement?.parentElement?.lastElementChild?.textContent
+    let name:string = email!;
+    var indexName = this.myArray.indexOf(name);
+
+    if(event.checked == false){
+      this.cnt -= 1;
+      this.myArray.splice(indexName, 1);
+    }else{
+      this.cnt += 1;
+      this.myArray.push(name)
+    }
+    this.cnt >= 5 && this.cnt <= 7 ? element.disabled = false : element.disabled = true;
+}
+
   sendRequest(){
     Swal.fire({
       title: 'Are you sure?',
@@ -72,22 +91,5 @@ export class RequestFeedbackPageComponent implements OnInit {
     })
   }
 
-  Check(event:MatCheckboxChange): void {
-    var id = event.source.id.split('-')[2];
-    var index = Number(id);
-    var data = document.getElementsByClassName('example-margin');
-    var element =  (<HTMLInputElement> document.getElementById("btnsend-request"));
-    var email = data[index-1].parentElement?.parentElement?.lastElementChild?.textContent
-    let name:string = email!;
-    var indexName = this.myArray.indexOf(name);
 
-    if(event.checked == false){
-      this.cnt -= 1;
-      this.myArray.splice(indexName, 1);
-    }else{
-      this.cnt += 1;
-      this.myArray.push(name)
-    }
-    this.cnt >= 5 && this.cnt <= 7 ? element.disabled = true : element.disabled = false;
-}
 }
