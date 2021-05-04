@@ -15,7 +15,7 @@
                     <span [style.color]="textColor ? 'white' : 'red'">&nbsp; Second Questionnaire</span>
                 </mat-toolbar><br>
 
-                <form [formGroup]="feedbackQuestionLists" style="max-width: auto;">
+                <form [formGroup]="feedbackQuestionLists" style="width: auto;">
                     <mat-toolbar>
                         <mat-toolbar-row>
                             <span class="span">Tell Us What You Think!</span>
@@ -27,7 +27,7 @@
                         <h5>Help us in answering the following questions.</h5>
                     </h4><br>
 
-                    <div>
+                    <div class="md-form">
                         <label for="question1">
                                     What should I stop doing?
                                     <mat-error *ngIf="feedbackQuestionLists?.controls?.question1?.hasError('required')">
@@ -37,7 +37,7 @@
                         <textarea matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
                     </div><br>
 
-                    <div>
+                    <div class="md-form">
                         <label for="question2">
                                     What should I continue doing?
                                     <mat-error *ngIf="feedbackQuestionLists?.controls?.question2?.hasError('required')">
@@ -47,7 +47,7 @@
                         <textarea matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
                     </div><br>
 
-                    <div>
+                    <div class="md-form">
                         <label for="question3">
                                     What should I start doing?
                                     <mat-error *ngIf="feedbackQuestionLists?.controls?.question3?.hasError('required')">
