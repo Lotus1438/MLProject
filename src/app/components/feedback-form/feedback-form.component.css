@@ -1,21 +1,28 @@
-button {
-    float: right;
-    margin-left: 5px;
-    margin-bottom: 5%;
-}
-
-.span {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-table #category {
-    border: 1px solid black;
-    padding: 10px;
-    margin: auto;
-}
-
-textarea {
-    width: auto;
-    overflow-y: scroll;
-}
+    button {
+        float: right;
+        margin-left: 5px;
+        margin-bottom: 5%;
+    }
+    
+    .span {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    
+    table #category {
+        border: 1px solid black;
+        padding: 10px;
+        margin: auto;
+    }
+    
+    textarea {
+        overflow-y: scroll;
+        resize: none;
+        margin-bottom: 1em;
+        width: 100%;
+        display: block;
+    }
+    
+    #feedbackRateScale {
+        display: flex;
+    }

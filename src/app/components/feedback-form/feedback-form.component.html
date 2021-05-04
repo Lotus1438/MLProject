@@ -8,13 +8,12 @@
     <!-- Questionnaire Form -->
     <mat-grid-tile>
         <div class="mat-elevation-z8">
+            <mat-toolbar color="warn">
+                <span [style.color]="!textColor ? 'white' : 'red'">First Questionnaire &nbsp; |</span>
+                <span [style.color]="textColor ? 'white' : 'red'">&nbsp; Second Questionnaire</span>
+            </mat-toolbar>
+
             <div [hidden]="isHide" style="margin: 5%">
-
-                <mat-toolbar color="warn">
-                    <span [style.color]="!textColor ? 'white' : 'red'">First Questionnaire &nbsp; |</span>
-                    <span [style.color]="textColor ? 'white' : 'red'">&nbsp; Second Questionnaire</span>
-                </mat-toolbar><br>
-
                 <form [formGroup]="feedbackQuestionLists" style="width: auto;">
                     <mat-toolbar>
                         <mat-toolbar-row>
@@ -35,7 +34,7 @@
                                     </mat-error>
                                 </label><br>
                         <textarea matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
-                    </div><br>
+                    </div>
 
                     <div class="md-form">
                         <label for="question2">
@@ -45,7 +44,7 @@
                                     </mat-error>
                                 </label><br>
                         <textarea matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
-                    </div><br>
+                    </div>
 
                     <div class="md-form">
                         <label for="question3">
@@ -55,18 +54,14 @@
                                     </mat-error>
                                 </label><br>
                         <textarea matInput formControlName="question3" placeholder="I should start..." cols="80" rows="5" required></textarea>
-                    </div><br>
+                    </div>
 
                     <button mat-raised-button color="primary" type="submit" (click)="nextBtn()" [disabled]="!feedbackQuestionLists.valid">NEXT</button>
-
                 </form>
             </div>
 
-            <!-- <div class="mat-elevation-z8">
-                <div [hidden]="isHide" style="margin: 5%">     -->
-
             <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-                <div [hidden]="!isHide">
+                <div [hidden]="!isHide" style="margin: 5%">
                     <mat-toolbar>
                         <mat-toolbar-row>
                             <span class="span">Rate Our Work</span>
@@ -88,7 +83,7 @@
                         <tr>
                             <td><label for="category">Category One</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryOne" required value="Outstanding" id="outstanding" formControlName="categoryOne" />
                                     <input type="radio" name="categoryOne" value="Good" #good formControlName="categoryOne" />
                                     <input type="radio" name="categoryOne" value="Average" #average formControlName="categoryOne" />
@@ -101,7 +96,7 @@
                         <tr>
                             <td><label for="category">Category Two</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryTwo" required value="Outstanding" #outstanding formControlName="categoryTwo" />
                                     <input type="radio" name="categoryTwo" value="Good" #good formControlName="categoryTwo" />
                                     <input type="radio" name="categoryTwo" value="Average" #average formControlName="categoryTwo" />
@@ -114,7 +109,7 @@
                         <tr>
                             <td><label for="category">Category Three</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryThree" required value="Outstanding" #outstanding formControlName="categoryThree" />
                                     <input type="radio" name="categoryThree" value="Good" #good formControlName="categoryThree" />
                                     <input type="radio" name="categoryThree" value="Average" #average formControlName="categoryThree" />
@@ -127,7 +122,7 @@
                         <tr>
                             <td><label for="category">Category Four</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryFour" required value="Outstanding" #outstanding formControlName="categoryFour" />
                                     <input type="radio" name="categoryFour" value="Good" #good formControlName="categoryFour" />
                                     <input type="radio" name="categoryFour" value="Average" #average formControlName="categoryFour" />
@@ -140,7 +135,7 @@
                         <tr>
                             <td><label for="category">Category Five</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryFive" required value="Outstanding" #outstanding formControlName="categoryFive" />
                                     <input type="radio" name="categoryFive" value="Good" #good formControlName="categoryFive" />
                                     <input type="radio" name="categoryFive" value="Average" #average formControlName="categoryFive" />
@@ -153,7 +148,7 @@
                         <tr>
                             <td><label for="category">Category Six</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categorySix" required value="Outstanding" #outstanding formControlName="categorySix" />
                                     <input type="radio" name="categorySix" value="Good" #good formControlName="categorySix" />
                                     <input type="radio" name="categorySix" value="Average" #average formControlName="categorySix" />
@@ -166,7 +161,7 @@
                         <tr>
                             <td><label for="category">Category Seven</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categorySeven" required value="Outstanding" #outstanding formControlName="categorySeven" />
                                     <input type="radio" name="categorySeven" value="Good" #good formControlName="categorySeven" />
                                     <input type="radio" name="categorySeven" value="Average" #average formControlName="categorySeven" />
@@ -179,7 +174,7 @@
                         <tr>
                             <td><label for="category">Category Eight</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryEight" required value="Outstanding" #outstanding formControlName="categoryEight" />
                                     <input type="radio" name="categoryEight" value="Good" #good formControlName="categoryEight" />
                                     <input type="radio" name="categoryEight" value="Average" #average formControlName="categoryEight" />
@@ -192,7 +187,7 @@
                         <tr>
                             <td><label for="category">Category Nine</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryNine" required value="Outstanding" #outstanding formControlName="categoryNine" />
                                     <input type="radio" name="categoryNine" value="Good" #good formControlName="categoryNine" />
                                     <input type="radio" name="categoryNine" value="Average" #average formControlName="categoryNine" />
@@ -205,7 +200,7 @@
                         <tr>
                             <td><label for="category">Category Ten</label></td>
                             <td>
-                                <form [formGroup]="feedbackRateScale">
+                                <form [formGroup]="feedbackRateScale" id="feedbackRateScale">
                                     <input type="radio" name="categoryTen" required value="Outstanding" #outstanding formControlName="categoryTen" />
                                     <input type="radio" name="categoryTen" value="Good" #good formControlName="categoryTen" />
                                     <input type="radio" name="categoryTen" value="Average" #average formControlName="categoryTen" />
