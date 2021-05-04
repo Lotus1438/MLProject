@@ -38,14 +38,14 @@ export class LoginPageComponent implements OnInit {
 
 
 login(){
-  console.log(this.loginForm.value)
   this.load = false;
   axios.post("https://mlback-end.herokuapp.com/api/login", this.loginForm.value).then(res =>{
-  console.log(res.data.token);
   window.localStorage.setItem('EMAIL_TOKEN',res.data.token);
-  // this.load = false;
+  sessionStorage.setItem('Username',this.loginForm.value.email);
   return this.router.navigate(['/request-feedback-page']);
   }).catch(err => {
+    console.log(err);
+
     Swal.fire('Opppss!','Credential does not match in our data', 'warning');
   this.load = true;
   })
