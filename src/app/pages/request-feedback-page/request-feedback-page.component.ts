@@ -25,6 +25,7 @@ export class RequestFeedbackPageComponent implements OnInit {
   cnt : number = 0;
 
   ngOnInit(): void {
+    console.log(sessionStorage.getItem('Username'));
     this.getEmails();
     (<HTMLInputElement> document.getElementById("btnsend-request")).disabled = true;
   }
@@ -72,13 +73,17 @@ export class RequestFeedbackPageComponent implements OnInit {
     }).then((result) => {
 
       if (result.value) {
-        this.service.sendEmail(this.myArray).subscribe((data:any)=>{
-          console.log(data);
-
+        const test = window.localStorage.getItem('EMAIL_TOKEN');
+        let name:string = test!;
+        const AuthStr = 'Bearer '.concat(name);
+        axios.post("https://mlback-end.herokuapp.com/api/emails", this.myArray, { headers: { Authorization: AuthStr }}).then(res =>{
           Swal.fire(
-            'Send!',
-            'success'
-          )
+                'Send!',
+                'success'
+              )
+        }).catch(err => {
+          console.log(err);
+          Swal.fire('Opppss!','Credential does not match in our data', 'warning');
         })
 
       } else if (result.dismiss === Swal.DismissReason.cancel) {
