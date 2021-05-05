@@ -19,20 +19,17 @@
 
 
 <mat-drawer-container class="nav-container" color="warn">
-  <!-- <mat-drawer mode="side" opened color="primary">Drawer content</mat-drawer> -->
-  <mat-drawer-content><mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="logout()">
+    <!-- <mat-drawer mode="side" opened color="primary">Drawer content</mat-drawer> -->
+    <mat-drawer-content>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">
       <span>Log out</span>
     </button>
-  </mat-menu>
+        </mat-menu>
 
-  <button
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    class="dropdown"
-    justify="flex-end"
-  >
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="dropdown" justify="flex-end">
+  <p>Branching</p>
     <mat-icon justify="flex-end">more_vert</mat-icon>
   </button>
-  <span><img src="https://play-lh.googleusercontent.com/6XVULhdIqrVo4pFtQUZWIXhVnNnY7eK-dEMmL1G83gEG--HmdIN62KTHvh6Y7dXS3hI" alt="mlhuillier_logo" height="50px"></span></mat-drawer-content>
+        <span><img src="https://play-lh.googleusercontent.com/6XVULhdIqrVo4pFtQUZWIXhVnNnY7eK-dEMmL1G83gEG--HmdIN62KTHvh6Y7dXS3hI" alt="mlhuillier_logo" height="50px"></span></mat-drawer-content>
 </mat-drawer-container>
