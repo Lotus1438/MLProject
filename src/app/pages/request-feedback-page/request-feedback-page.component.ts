@@ -61,35 +61,43 @@ export class RequestFeedbackPageComponent implements OnInit {
     this.cnt >= 5 && this.cnt <= 7 ? element.disabled = false : element.disabled = true;
 }
 
-  sendRequest(){
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will be sending "' + this.myArray + '" request feedback form to these emails!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, send it!',
-      cancelButtonText: 'No, cancel it'
-    }).then((result) => {
+sendRequest(){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You will be sending "' + this.myArray + '" request feedback form to these emails!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, send it!',
+    cancelButtonText: 'No, cancel it'
+  }).then((result) => {
 
-      if (result.value) {
-        this.service.sendEmail(this.myArray).subscribe((data:any)=>{
-          console.log(data);
+    if (result.value) {
+      const test = window.localStorage.getItem('EMAIL_TOKEN');
+      let name:string = test!;
+      const AuthStr = 'Bearer '.concat(name);
+      console.log(this.myArray);
 
-          Swal.fire(
-            'Send!',
-            'success'
-          )
-        })
+      axios.post("https://mlback-end.herokuapp.com/api/emails", this.myArray, { headers: { Authorization: AuthStr }}).then(res =>{
+        console.log(res);
 
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
-          'Cancelled',
-          'Your request feedback form is cancelled.',
-          'error'
-        )
-      }
-    })
-  }
+              'Send!',
+              'success'
+            )
+      }).catch(err => {
+        console.log(err);
+        Swal.fire('Opppss!','Credential does not match in our data', 'warning');
+      })
+
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire(
+        'Cancelled',
+        'Your request feedback form is cancelled.',
+        'error'
+      )
+    }
+  })
+}
 
 
 }
