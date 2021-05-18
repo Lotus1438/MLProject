@@ -39,6 +39,8 @@ import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-
 import { EmailRequestedPageComponent } from './pages/email-requested-page/email-requested-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RequestFeedbackPageComponent } from './pages/request-feedback-page/request-feedback-page.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 
 @NgModule({
@@ -51,6 +53,9 @@ import { RequestFeedbackPageComponent } from './pages/request-feedback-page/requ
     PageNotFoundPageComponent,
     EmailRequestedPageComponent,
     RequestFeedbackPageComponent,
+    FeedbackFormComponent,
+    NavigationBarComponent
+
 
   ],
   imports: [

@@ -1,20 +1,22 @@
-<mat-grid-list cols="2">
+<app-navigation-bar></app-navigation-bar>
+
+<mat-grid-list cols="2" class="grid-content">
 
     <!-- ML Logo -->
-    <mat-grid-tile>
+    <mat-grid-tile class="logo-content">
         <img src="https://d33wubrfki0l68.cloudfront.net/09bb9e6f9a3b78b93d963887e4d709e7c97da0bc/11cbf/img/ml-logo.png" alt="mlhuillier-logo">
     </mat-grid-tile>
 
     <!-- Questionnaire Form -->
-    <mat-grid-tile>
+    <mat-grid-tile class="form-content">
         <div class="mat-elevation-z8">
             <mat-toolbar color="warn">
                 <span [style.color]="!textColor ? 'white' : 'red'">First Questionnaire &nbsp; |</span>
                 <span [style.color]="textColor ? 'white' : 'red'">&nbsp; Second Questionnaire</span>
             </mat-toolbar>
 
-            <div [hidden]="isHide" style="margin: 5%">
-                <form [formGroup]="feedbackQuestionLists" style="width: auto;">
+            <div [hidden]="isHide" >
+                <form [formGroup]="feedbackQuestionLists" style="width: auto;" class="questionForm">
                     <mat-toolbar>
                         <mat-toolbar-row>
                             <span class="span">Tell Us What You Think!</span>
@@ -60,6 +62,7 @@
                 </form>
             </div>
 
+            <!-- Second Form -->
             <div fxLayoutAlign="center center" fxFlexFill class="main-div">
                 <div [hidden]="!isHide" style="margin: 5%">
                     <mat-toolbar>
