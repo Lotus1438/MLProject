@@ -15,8 +15,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
-
+import {MatListModule} from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -27,12 +27,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { EmailRequestFeedbackPageComponent } from './pages/email-request-feedback-page/email-request-feedback-page.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { PageNotFoundPageComponent } from './pages/page-not-found-page/page-not-found-page.component';
@@ -83,7 +81,11 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
     MatDividerModule,
     MatAutocompleteModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    // MatSort,
+    MatListModule,
+    MatPaginatorModule,
+
 
   ],
   providers: [],

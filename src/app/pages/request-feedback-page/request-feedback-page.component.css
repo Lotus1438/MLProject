@@ -1,16 +1,22 @@
 #table{
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
+  padding-top: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: block;
 }
 
 #table td, #table th{
   border: 1px solid #ddd;
   padding: 10px;
+  width: 100%;
 }
 
 #table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
+
   text-align: center;
   background-color: red;
   color: white;
@@ -20,7 +26,18 @@
 
 #table tr {
   text-align: center;
+  /* padding-top: 10px; */
 }
+
+.logo-content{
+  margin: 20px;
+}
+
+.grid-content{
+  margin-top: 10px;
+  /* margin: 20px; */
+}
+
 
 #btnsend-request{
   color: white;

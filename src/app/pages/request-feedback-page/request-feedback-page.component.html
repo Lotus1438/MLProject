@@ -1,7 +1,7 @@
 <app-navigation-bar></app-navigation-bar>
 
 <!-- search field -->
-<mat-form-field fxLayoutAlign="center center" class="search-field">
+<!-- <mat-form-field fxLayoutAlign="center center" class="search-field">
   <mat-icon matPrefix>search</mat-icon>
   <input
     matInput
@@ -9,55 +9,67 @@
     placeholder="search here"
     class="search-input"
   />
-</mat-form-field>
+</mat-form-field> -->
 
 <!-- table  -->
+<!-- <br> -->
+<mat-grid-list cols="2" class="grid-content">
 
-    <form
-      fxLayoutAlign="stretch"
-      fxLayout="column"
-      (ngSubmit)="selectForm.valid"
-      [formGroup]="selectForm"
-    >
-      <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-        <div class="mat-elevation-z8" fxFlex="30">
-          <table id="table">
-            <thead class="thead">
-              <tr>
-                <th>Select</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let email of emails">
-                <td>
-                  <mat-checkbox
-                    class="example-margin"
-                    color="warn"
-                    type="Checkbox"
-                    (change)="Check($event)"
-                    required
-                  >
-                  </mat-checkbox>
-                </td>
-                <td>{{ email.email }}</td>
-              </tr>
-            </tbody>
-          </table>
+<!-- ML Logo -->
+  <mat-grid-tile class="logo-content">
+    <img src="https://d33wubrfki0l68.cloudfront.net/09bb9e6f9a3b78b93d963887e4d709e7c97da0bc/11cbf/img/ml-logo.png" alt="mlhuillier-logo">
+</mat-grid-tile>
 
-           <!-- button field -->
-      <button
-      mat-raised-button
-      color="warn"
-      id="btnsend-request"
-      type="submit"
-      (click)="sendRequest()"
-      [disabled]="!selectForm.valid"
+<!-- email form  -->
 
-      >
-      Send Request
-    </button>
-        </div>
-      </div>
-    </form>
+<mat-grid-tile>
+  <form
+  fxLayoutAlign="stretch"
+fxLayout="column"
+  (ngSubmit)="selectForm.valid"
+  [formGroup]="selectForm"
+>
+  <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <div class="mat-elevation-z8" fxFlex="100">
+      <table id="table">
+        <thead class="thead">
+          <tr>
+            <th>Select</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let email of emails">
+            <td>
+              <mat-checkbox
+                class="example-margin"
+                color="warn"
+                type="Checkbox"
+                (change)="Check($event)"
+                required
+              >
+              </mat-checkbox>
+            </td>
+            <td>{{ email.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+       <!-- button field -->
+  <button
+  mat-raised-button
+  color="warn"
+  id="btnsend-request"
+  type="submit"
+  (click)="sendRequest()"
+  [disabled]="!selectForm.valid"
+
+  >
+  Send Request
+</button>
+    </div>
+  </div>
+</form>
+</mat-grid-tile>
+</mat-grid-list>
 

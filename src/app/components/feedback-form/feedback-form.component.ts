@@ -87,10 +87,10 @@ export class FeedbackFormComponent implements OnInit {
   submitBtn() {
     // console.log("User's Radion Button Choice: ", this.feedbackRateScale);
     // window.location.reload();
-    const test = window.localStorage.getItem('EMAIL_TOKEN');
+    const test = window.localStorage.getItem('FORM_TOKEN');
     let name:string = test!;
     const AuthStr = 'Bearer '.concat(name);
-    axios.get("https://mlback-end.herokuapp.com/api/forms", { headers: { Authorization: AuthStr } })
+    axios.post("https://mlback-end.herokuapp.com/api/forms", { headers: { Authorization: AuthStr } })
       .then(response => {
         this.answers = response.data;
       })
