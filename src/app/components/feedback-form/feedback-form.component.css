@@ -4,8 +4,34 @@
 
 .logo-content{
   margin: 20px;
+  left: 70px !important;
 }
 
+/* .mat-elevation-z8{
+  display: block;
+  height: 100vh;
+  margin-left: auto;
+  margin-top: 150px;
+  box-shadow: 2px 2px 8px dimgrey;
+}
+.mat-grid-tile .mat-figure {
+  top: 0;
+  height: 100vh !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+} */
+.image{
+  margin-top: -161px;
+  width: 383px;
+  margin-left: -36px;
+}
 button {
         float: right;
         margin-left: 5px;
@@ -34,3 +60,20 @@ button {
     #feedbackRateScale {
         display: flex;
     }
+
+/* .mat-grid-title{
+  left: calc((50% - 0.5px + 1px) * 1);
+  width: calc((50% - 0.5px) * 1 + 0px);
+  margin-top: 0px;
+  padding-top: calc((50% - 0.5px) * 1 + 0px);
+  height: 100vh;
+} */
+
+.form-content{
+  left: calc((50% - 0.5px + 1px) * 1);
+  width: calc((50% - 0.5px) * 1 + 0px);
+  margin-top: -411px !important;
+  padding-top: calc((50% - 0.5px) * 1 + 0px);
+  height: 100vh;
+}
+
