@@ -35,7 +35,7 @@
                                         <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
                                     </mat-error>
                                 </label><br>
-                        <textarea matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
+                        <textarea style="overflow:hidden" matInput formControlName="question1" placeholder="I should stop..." cols="80" rows="5" required></textarea>
                     </div>
 
                     <div class="md-form">
@@ -45,7 +45,7 @@
                                         <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
                                     </mat-error>
                                 </label><br>
-                        <textarea matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
+                        <textarea style="overflow:hidden" matInput formControlName="question2" placeholder="I should continue..." cols="80" rows="5" required></textarea>
                     </div>
 
                     <div class="md-form">
@@ -55,7 +55,7 @@
                                         <i style="font-family: monospace    ; font-size: smaller;">*Required</i>
                                     </mat-error>
                                 </label><br>
-                        <textarea matInput formControlName="question3" placeholder="I should start..." cols="80" rows="5" required></textarea>
+                        <textarea style="overflow:hidden" matInput formControlName="question3" placeholder="I should start..." cols="80" rows="5" required></textarea>
                     </div>
 
                     <button mat-raised-button color="primary" type="submit" (click)="nextBtn()" [disabled]="!feedbackQuestionLists.valid">NEXT</button>
