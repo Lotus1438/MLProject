@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import axios from 'axios';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
+import { MatSort } from '@angular/material/sort';
+
 
 @Component({
   selector: 'app-request-feedback-page',

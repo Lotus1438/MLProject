@@ -20,6 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+
             "outputPath": "dist/ml-project",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,6 +35,9 @@
               "src/custom-theme.scss",
               "src/styles.css"
             ],
+            "allowedCommonJsDependencies": [
+              "lodash"
+           ],
             "scripts": []
           },
           "configurations": {
