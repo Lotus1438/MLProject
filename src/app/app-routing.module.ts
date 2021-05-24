@@ -21,7 +21,8 @@ const routes: Routes = [
   {path: '**', redirectTo: 'PageNotFoundPageComponent', pathMatch: 'full'},
 
   {path: 'feedback-form', component: FeedbackFormComponent},
-  {path: 'navigation-bar', component: NavigationBarComponent}
+  {path: 'navigation-bar', component: NavigationBarComponent},
+  {path: 'admin-page', component: AdminPageComponent},
 
 ];
 

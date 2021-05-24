@@ -1,23 +1,45 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-        <div class="icon-material">
-            <!-- <mat-icon size="meduim">account_circle</mat-icon> -->
-            <!-- <img src="/src/assets/user-img.png" alt="user-icon"> -->
-            <img src="https://i.dlpng.com/static/png/6542370_preview.png" alt="user-icon">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <div class="icon-material">
+      <mat-toolbar><mat-icon>account_circle</mat-icon></mat-toolbar>
+    </div>
 
-            <mat-toolbar></mat-toolbar>
-        </div>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        class="nav-item"
+        routerLink="/admin-page"
+        routerLinkActive="active"
+      >
+        <mat-icon>inbox</mat-icon>&nbsp; Inbox</a
+      >
+      <a
+        mat-list-item
+        class="nav-item"
+        routerLink="/request-feedback-page"
+        routerLinkActive="active"
+      >
+        <mat-icon>email</mat-icon>&nbsp; Email Request</a
+      >
+      <a
+        mat-list-item
+        class="nav-item"
+        routerLink="/feedback-form"
+        routerLinkActive="active"
+      >
+        <mat-icon>feedback</mat-icon>&nbsp; Feedback Form</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
 
-
-        <mat-nav-list>
-            <a mat-list-item class="nav-item" routerLink='/request-feedback-page' routerLinkActive="active">
-                <mat-icon>email</mat-icon>&nbsp; Email Request</a>
-            <a mat-list-item class="nav-item" routerLink='/feedback-form' routerLinkActive="active">
-                <mat-icon>feedback</mat-icon>&nbsp; Feedback Form</a>
-        </mat-nav-list>
-    </mat-sidenav>
-
-    <mat-sidenav-content>
-        <app-navbar></app-navbar>
-    </mat-sidenav-content>
+  <mat-sidenav-content>
+    <app-navbar></app-navbar>
+  </mat-sidenav-content>
 </mat-sidenav-container>

@@ -24,15 +24,15 @@
   right: 10px;
 }
 
-.dashboard-card-content {
-  /* text-align: center; */
-  padding: 20px;
-  padding-left: 50px;
-}
-
 .text-area{
   height: 50px;
   width: 800px;
+  border: none;
+  resize: none;
+
+}
+.text-area:focus{
+  outline: none;
 }
 
 .div-content{

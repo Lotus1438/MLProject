@@ -2,9 +2,9 @@
   padding: 3px;
 }
 
-.div-content{
+/* .div-content{
   width: 500px;
-}
+} */
 
 .mat-item{
   padding: 3px;
@@ -17,6 +17,17 @@
   border-radius: 5px;
 }
 
+.text-area:focus{
+  outline: none;
+}
+
 .btnCreate{
   margin: 10px;
+}
+
+.text-area {
+  height: 50px;
+  width: 800px;
+  border: none;
+  resize: none;
 }

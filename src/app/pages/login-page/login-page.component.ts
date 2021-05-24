@@ -6,9 +6,6 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 
-
-
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
