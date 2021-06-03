@@ -14,6 +14,7 @@ export class FeedbackFormComponent implements OnInit {
   // Feedback Questionnaire Textarea
   public FORM_TOKEN: any;
   feedbackQuestionLists = new FormGroup({
+    emailFormControl: new FormControl('', [Validators.required,Validators.email,]),
     question1: new FormControl('', [Validators.required]),
     question2: new FormControl('', [Validators.required]),
     question3: new FormControl('', [Validators.required])

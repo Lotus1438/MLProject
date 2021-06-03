@@ -29,6 +29,20 @@
                     </h4><br>
 
                     <div class="md-form">
+                      <!-- input name  -->
+                      <!-- <form class="example-form"> -->
+                        <mat-form-field class="example-full-width">
+                          <mat-label>Email</mat-label>
+                          <input type="email" matInput formControlName="emailFormControl" placeholder="Ex. pat@example.com">
+                          <mat-error *ngIf="feedbackQuestionLists.hasError('email') && !feedbackQuestionLists.hasError('required')">
+                            Please enter a valid email address
+                          </mat-error>
+                          <mat-error *ngIf="feedbackQuestionLists.hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error>
+                        </mat-form-field>
+                      <!-- </form> -->
+                      <br>
                         <label for="question1">
                                     What should I stop doing?
                                     <mat-error *ngIf="feedbackQuestionLists?.controls?.question1?.hasError('required')">
