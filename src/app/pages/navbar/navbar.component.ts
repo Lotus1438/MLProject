@@ -25,7 +25,7 @@ export class NavbarComponent {
     const test = window.localStorage.getItem('EMAIL_TOKEN');
     let name:string = test!;
     const AuthStr = 'Bearer '.concat(name);
-    axios.post("https://mlback-end.herokuapp.com/api/logout/", { headers: { Authorization: AuthStr }})
+    axios.post("https://mlproject-backend.herokuapp.com/api/logout/", { headers: { Authorization: AuthStr }})
     localStorage.removeItem('EMAIL_TOKEN');
     this.router.navigate(['/login-page'])
   }

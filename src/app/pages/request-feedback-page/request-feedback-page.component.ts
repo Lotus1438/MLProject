@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
@@ -6,7 +5,7 @@ import { Router } from '@angular/router';
 import axios from 'axios';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
-import { MatSort } from '@angular/material/sort';
+
 
 
 @Component({
@@ -36,7 +35,7 @@ export class RequestFeedbackPageComponent implements OnInit {
     const test = window.localStorage.getItem('EMAIL_TOKEN');
     let name:string = test!;
     const AuthStr = 'Bearer '.concat(name);
-    axios.get("https://mlback-end.herokuapp.com/api/email", { headers: { Authorization: AuthStr } })
+    axios.get("https://mlproject-backend.herokuapp.com/api/email", { headers: { Authorization: AuthStr } })
       .then(response => {
         this.emails = response.data;
       })
@@ -78,7 +77,7 @@ export class RequestFeedbackPageComponent implements OnInit {
         const test = window.localStorage.getItem('EMAIL_TOKEN');
         let name:string = test!;
         const AuthStr = 'Bearer '.concat(name);
-        axios.post("https://mlback-end.herokuapp.com/api/emails", this.myArray, { headers: { Authorization: AuthStr }}).then(res =>{
+        axios.post("https://mlproject-backend.herokuapp.com/api/emails", this.myArray, { headers: { Authorization: AuthStr }}).then(res =>{
           Swal.fire(
                 'Send!',
                 'success'

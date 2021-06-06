@@ -22,20 +22,26 @@ export class FeedbackFormComponent implements OnInit {
 
   // For Rate Scale Radio Button
   // public isRequired = true;
-  public feedbackRateScale = new FormGroup({
+  // public feedbackRateScale = new FormGroup({
+  //   categoryOne: new FormControl(null, [Validators.required]),
+  //   categoryTwo: new FormControl(null, [Validators.required]),
+  //   categoryThree: new FormControl(null, [Validators.required]),
+  //   categoryFour: new FormControl(null, [Validators.required]),
+  //   categoryFive: new FormControl(null, [Validators.required]),
+  //   categorySix: new FormControl(null, [Validators.required]),
+  //   categorySeven: new FormControl(null, [Validators.required]),
+  //   categoryEight: new FormControl(null, [Validators.required]),
+  //   categoryNine: new FormControl(null, [Validators.required]),
+  //   categoryTen: new FormControl(null, [Validators.required])
+  // });
+
+  feedbackRateScale = new FormGroup ({
     categoryOne: new FormControl(null, [Validators.required]),
     categoryTwo: new FormControl(null, [Validators.required]),
     categoryThree: new FormControl(null, [Validators.required]),
     categoryFour: new FormControl(null, [Validators.required]),
     categoryFive: new FormControl(null, [Validators.required]),
-    categorySix: new FormControl(null, [Validators.required]),
-    categorySeven: new FormControl(null, [Validators.required]),
-    categoryEight: new FormControl(null, [Validators.required]),
-    categoryNine: new FormControl(null, [Validators.required]),
-    categoryTen: new FormControl(null, [Validators.required])
-  });
-
-  ;
+   })
 
 
 
@@ -72,6 +78,7 @@ export class FeedbackFormComponent implements OnInit {
 
   nextBtn() {
     console.log("User's Input: ", this.feedbackQuestionLists);
+    console.log("Value: ", this.feedbackRateScale);
     if (this.isHide) {
       this.isHide = false;
       this.textColor = false;
@@ -98,9 +105,9 @@ export class FeedbackFormComponent implements OnInit {
     //   .catch((error) => {
     //     console.log('error ' + error);
     //   });
-  axios.post("https://mlback-end.herokuapp.com/api/forms", this.feedbackQuestionLists.value).then(res =>{
+  axios.post("https://mlproject-backend.herokuapp.com/api/forms", this.feedbackQuestionLists.value && this.feedbackRateScale.value).then(res =>{
   window.localStorage.setItem('FORM_TOKEN',res.data.token);
-  sessionStorage.setItem('Username',this.feedbackQuestionLists.value);
+  sessionStorage.setItem('Username',this.feedbackQuestionLists.value && this.feedbackRateScale.value);
   return this.route.navigate(['/request-feedback-page']);
   }).catch(err => {
     console.log(err);

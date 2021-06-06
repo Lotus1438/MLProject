@@ -87,6 +87,8 @@
 
                     <h4 style="text-align: center;">Evaluate the following categories.</h4>
 
+                    <!-- <app-feedback-form2></app-feedback-form2> -->
+
                     <table class="table">
                         <tr>
                             <td><label for="category">Performance Category</label></td>
@@ -226,8 +228,9 @@
                                 </form>
                             </td>
                         </tr>
-                    </table><br>
+                    </table>
 
+                    <br>
                     <!-- <p>Form value: {{feedbackRateScale.value | json}}; Valid: {{feedbackRateScale.valid}}</p> -->
 
                     <button mat-raised-button color="primary" type="submit" (click)="submitBtn()" [disabled]="!feedbackRateScale.valid">SUBMIT</button>

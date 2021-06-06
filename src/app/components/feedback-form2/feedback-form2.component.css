@@ -1,0 +1,29 @@
+.form {
+  width: fit-content;
+  margin-left: 222px;
+}
+#table{
+  border-collapse: collapse;
+  width: 30vw;
+  margin-top: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+#table td, #table th{
+border: 1px solid #ddd;
+text-align: center;
+width: 100vh;
+}
+
+#table th {
+text-align: center;
+background-color: red;
+color: white;
+}
+
+#table tr:hover {background-color: #ddd;}
+
+#table tr {
+text-align: center;
+}

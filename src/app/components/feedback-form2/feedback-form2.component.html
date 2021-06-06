@@ -1,0 +1,124 @@
+<form class="form" fxLayoutAlign="stretch" fxLayout="column" [formGroup]="feedbackRate">
+  <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <div class="mat-elevation-z8" fxFlex="100">
+      <table id="table">
+        <thead class="thead">
+          <tr>
+            <th>Caterogy</th>
+            <th>Outstanding</th>
+            <th>Good</th>
+            <th>Average</th>
+            <th>Fair</th>
+            <th>Poor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr matSort>
+            <td>
+              Category 1
+            </td>
+            <td>
+              <input type="radio" name="categoryOne" required value="Outstanding" #outstanding formControlName="categoryOne" />
+            </td>
+            <td>
+              <input type="radio" name="categoryOne" value="Good" #good formControlName="categoryOne" />
+            </td>
+            <td>
+              <input type="radio" name="categoryOne" value="Average" #average formControlName="categoryOne" />
+            </td>
+            <td>
+              <input type="radio" name="categoryOne" value="Fair" #fair formControlName="categoryOne" />
+            </td>
+            <td>
+              <input type="radio" name="categoryOne" value="Poor" #poor formControlName="categoryOne" />
+            </td>
+          </tr>
+          <tr matSort>
+            <td>
+              Category 2
+            </td>
+            <td>
+              <input type="radio" name="categoryTwo" required value="Outstanding" #outstanding formControlName="categoryTwo" />
+            </td>
+            <td>
+              <input type="radio" name="categoryTwo" value="Good" #good formControlName="categoryTwo" />
+            </td>
+            <td>
+              <input type="radio" name="categoryTwo" value="Average" #average formControlName="categoryTwo" />
+            </td>
+            <td>
+              <input type="radio" name="categoryTwo" value="Fair" #fair formControlName="categoryTwo" />
+            </td>
+            <td>
+              <input type="radio" name="categoryTwo" value="Poor" #poor formControlName="categoryTwo" />
+            </td>
+          </tr>
+          <tr matSort>
+            <td>
+              Category 3
+            </td>
+            <td>
+              <input type="radio" name="categoryThree" required value="Outstanding" #outstanding formControlName="categoryThree" />
+            </td>
+            <td>
+              <input type="radio" name="categoryThree" value="Good" #good formControlName="categoryThree" />
+            </td>
+            <td>
+              <input type="radio" name="categoryThree" value="Average" #average formControlName="categoryThree" />
+            </td>
+            <td>
+              <input type="radio" name="categoryThree" value="Fair" #fair formControlName="categoryThree" />
+            </td>
+            <td>
+              <input type="radio" name="categoryThree" value="Poor" #poor formControlName="categoryThree" />
+            </td>
+          </tr>
+          <tr matSort>
+            <td>
+              Category 4
+            </td>
+            <td>
+              <input type="radio" name="categoryFour" required value="Outstanding" #outstanding formControlName="categoryFour" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFour" value="Good" #good formControlName="categoryFour" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFour" value="Average" #average formControlName="categoryFour" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFour" value="Fair" #fair formControlName="categoryFour" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFour" value="Poor" #poor formControlName="categoryFour" />
+            </td>
+          </tr>
+          <tr matSort>
+            <td>
+              Category 5
+            </td>
+            <td>
+              <input type="radio" name="categoryFive" required value="Outstanding" #outstanding formControlName="categoryFive" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFive" value="Good" #good formControlName="categoryFive" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFive" value="Average" #average formControlName="categoryFive" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFive" value="Fair" #fair formControlName="categoryFive" />
+            </td>
+            <td>
+              <input type="radio" name="categoryFive" value="Poor" #poor formControlName="categoryFive" />
+            </td>
+          </tr>
+        </tbody>
+        <!-- <button mat-raised-button color="warn" id="btnsend-request" type="submit">
+        </button> -->
+      </table>
+      <button mat-raised-button color="warn" type="submit" (click)="nextBtn()">PREVIOUS</button>
+      <button mat-raised-button color="primary" type="submit" (click)="submitBtn()" [disabled]="!feedbackRate.valid">SUBMIT</button>
+    </div>
+  </div>
+</form>

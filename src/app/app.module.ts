@@ -39,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RequestFeedbackPageComponent } from './pages/request-feedback-page/request-feedback-page.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { FeedbackForm2Component } from './components/feedback-form2/feedback-form2.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
     EmailRequestedPageComponent,
     RequestFeedbackPageComponent,
     FeedbackFormComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    FeedbackForm2Component
 
 
   ],
